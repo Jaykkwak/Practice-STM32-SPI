@@ -362,3 +362,88 @@ Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list
  
+18:22:16 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+../drivers/Src/stm32f407xx_gpio_driver.c: In function 'GPIO_Init':
+../drivers/Src/stm32f407xx_gpio_driver.c:95:32: error: 'temp1' undeclared (first use in this function); did you mean 'tem1'?
+   95 |                 SYSCFG->EXTICR[temp1] = portcode << (tem2 * 4);
+      |                                ^~~~~
+      |                                tem1
+../drivers/Src/stm32f407xx_gpio_driver.c:95:32: note: each undeclared identifier is reported only once for each function it appears in
+../drivers/Src/stm32f407xx_gpio_driver.c:91:25: warning: unused variable 'tem1' [-Wunused-variable]
+   91 |                 uint8_t tem1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
+      |                         ^~~~
+../drivers/Src/stm32f407xx_gpio_driver.c: In function 'GPIO_IRQHandling':
+../drivers/Src/stm32f407xx_gpio_driver.c:265:41: error: expected declaration specifiers before '}' token
+  265 | void GPIO_IRQHandling(uint8_t PinNumber)}
+      |                                         ^
+../drivers/Src/stm32f407xx_gpio_driver.c:269: error: expected '{' at end of input
+make: *** [drivers/Src/subdir.mk:19: drivers/Src/stm32f407xx_gpio_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+18:22:50 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+../drivers/Src/stm32f407xx_gpio_driver.c: In function 'GPIO_Init':
+../drivers/Src/stm32f407xx_gpio_driver.c:95:32: error: 'temp1' undeclared (first use in this function); did you mean 'tem1'?
+   95 |                 SYSCFG->EXTICR[temp1] = portcode << (tem2 * 4);
+      |                                ^~~~~
+      |                                tem1
+../drivers/Src/stm32f407xx_gpio_driver.c:95:32: note: each undeclared identifier is reported only once for each function it appears in
+../drivers/Src/stm32f407xx_gpio_driver.c:91:25: warning: unused variable 'tem1' [-Wunused-variable]
+   91 |                 uint8_t tem1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
+      |                         ^~~~
+make: *** [drivers/Src/subdir.mk:19: drivers/Src/stm32f407xx_gpio_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+18:24:00 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\tjdtj\STM32CubeIDE\workspace_1.14.1\target\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   1972	      8	   1568	   3548	    ddc	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
+18:24:15 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1972	      8	   1568	   3548	    ddc	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+18:46:01 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_spi_driver.d" -MT"drivers/Src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:87:9: error: too few arguments to function 'GPIO_IRQHandling'
+   87 |         GPIO_IRQHandling();
+      |         ^~~~~~~~~~~~~~~~
+In file included from C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f407xx.h:616,
+                 from ../Src/main.c:20:
+C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f4xx_gpio_driver.h:131:6: note: declared here
+  131 | void GPIO_IRQHandling(uint8_t PinNumber);
+      |      ^~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+18:47:57 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\tjdtj\STM32CubeIDE\workspace_1.14.1\target\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+    652	      8	   1568	   2228	    8b4	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
