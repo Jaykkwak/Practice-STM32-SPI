@@ -447,3 +447,80 @@ Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list
  
+22:30:17 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_spi_driver.d" -MT"drivers/Src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../drivers/Src/stm32f407xx_spi_driver.c: In function 'SPI_SendData':
+../drivers/Src/stm32f407xx_spi_driver.c:91:15: warning: implicit declaration of function 'SPI_GetFlagStatus' [-Wimplicit-function-declaration]
+   91 |         while(SPI_GetFlagStatus(pSPIx,SPI_TXE_FLAG)  == FLAG_RESET );
+      |               ^~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'SPI2_Inits':
+../Src/main.c:63:46: error: 'FD' undeclared (first use in this function)
+   63 |         SPI2handle.SPIConfig.SPI_BusConfig = FD;
+      |                                              ^~
+../Src/main.c:63:46: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:71:18: error: incompatible type for argument 1 of 'SPI_Init'
+   71 |         SPI_Init(SPI2handle);
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  SPI_Handle_t
+In file included from C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f407xx.h:617,
+                 from ../Src/main.c:21:
+C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f407xx_spi_driver.h:122:29: note: expected 'SPI_Handle_t *' but argument is of type 'SPI_Handle_t'
+  122 | void SPI_Init(SPI_Handle_t *pSPIHandle);
+      |               ~~~~~~~~~~~~~~^~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:31:57 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'SPI2_Inits':
+../Src/main.c:71:18: error: incompatible type for argument 1 of 'SPI_Init'
+   71 |         SPI_Init(SPI2handle);
+      |                  ^~~~~~~~~~
+      |                  |
+      |                  SPI_Handle_t
+In file included from C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f407xx.h:617,
+                 from ../Src/main.c:21:
+C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc/stm32f407xx_spi_driver.h:122:29: note: expected 'SPI_Handle_t *' but argument is of type 'SPI_Handle_t'
+  122 | void SPI_Init(SPI_Handle_t *pSPIHandle);
+      |               ~~~~~~~~~~~~~~^~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:32:19 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\tjdtj\STM32CubeIDE\workspace_1.14.1\target\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./drivers/Src/stm32f407xx_spi_driver.o: in function `SPI_SendData':
+C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/Debug/../drivers/Src/stm32f407xx_spi_driver.c:91: undefined reference to `SPI_GetFlagStatus'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: stm32f4xx_drivers.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:33:27 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_spi_driver.d" -MT"drivers/Src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\tjdtj\STM32CubeIDE\workspace_1.14.1\target\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./drivers/Src/stm32f407xx_spi_driver.o: in function `SPI_SendData':
+C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/Debug/../drivers/Src/stm32f407xx_spi_driver.c:91: undefined reference to `SPI_GetFlagStatus'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: stm32f4xx_drivers.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:35:01 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/tjdtj/STM32CubeIDE/workspace_1.14.1/target/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_spi_driver.d" -MT"drivers/Src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "drivers/Src/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\tjdtj\STM32CubeIDE\workspace_1.14.1\target\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+   2452	      8	   1568	   4028	    fbc	stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f4xx_drivers.list
+ 
